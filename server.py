@@ -21,9 +21,8 @@ def index():
 
 @app.route("/api/console", methods=['GET', 'POST'])
 def post_to_console():
-    inp = flask.request.form.get('input', None)
     if inp is not None:
-        console.push(inp)
+        console.push(onyx.OnyxAI.main(onyx.OnyxAI))
 
     return _get_console_state_json()
 
